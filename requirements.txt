@@ -1,0 +1,10 @@
+django==3.0.0
+psycopg2-binary
+pylint
+pylint-django
+flake8
+flake8-bugbear
+black
+isort
+pytest
+pytest-django
