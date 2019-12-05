@@ -1,8 +1,8 @@
 name: Tests
 
- on: [push]
+on: [push]
 
- jobs:
+jobs:
   run:
     services:
       postgres:
@@ -15,7 +15,7 @@ name: Tests
           POSTGRES_USER: dataclass_field
           POSTGRES_PASSWORD: dataclass_field
 
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v1
