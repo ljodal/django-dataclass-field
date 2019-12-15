@@ -1,6 +1,7 @@
 from django.db import models
 
 from dataclass_field import DataclassField
+from dataclass_field.managers import DataclassesQuerySet
 
 from .types import Artist
 
@@ -13,6 +14,8 @@ class Album(models.Model):
     artist = DataclassField(dataclass=Artist)
     name = models.CharField(max_length=255)
 
+    objects = DataclassesQuerySet.as_manager()
+
 
 class Song(models.Model):
     """
@@ -21,3 +24,5 @@ class Song(models.Model):
 
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
+
+    objects = DataclassesQuerySet.as_manager()
